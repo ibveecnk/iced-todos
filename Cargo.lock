@@ -997,18 +997,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gpui-test"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "csv",
- "iced",
- "log",
- "log4rs",
-]
-
-[[package]]
 name = "guillotiere"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1104,6 +1092,18 @@ dependencies = [
  "iced_widget",
  "iced_winit",
  "thiserror",
+]
+
+[[package]]
+name = "iced-todos"
+version = "0.1.0-1"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "csv",
+ "iced",
+ "log",
+ "log4rs",
 ]
 
 [[package]]

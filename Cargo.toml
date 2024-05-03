@@ -1,6 +1,6 @@
 [package]
-name = "gpui-test"
-version = "0.1.0"
+name = "iced-todos"
+version = "0.1.0-1"
 edition = "2021"
 
 [lints.rust]
