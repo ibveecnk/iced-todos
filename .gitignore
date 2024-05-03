@@ -1,4 +1,3 @@
 target/
 data.csv
-Cargo.lock
 *.log
