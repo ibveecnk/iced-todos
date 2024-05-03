@@ -48,12 +48,6 @@ jobs:
             bin: iced-todos
             name: iced-todos-Linux-i686-musl.tar.gz
             skip_tests: true
-          - os_name: Linux-powerpc
-            os: ubuntu-20.04
-            target: powerpc-unknown-linux-gnu
-            bin: iced-todos
-            name: iced-todos-Linux-powerpc-gnu.tar.gz
-            skip_tests: true
           - os_name: Linux-powerpc64
             os: ubuntu-20.04
             target: powerpc64-unknown-linux-gnu
@@ -76,12 +70,6 @@ jobs:
             target: s390x-unknown-linux-gnu
             bin: iced-todos
             name: iced-todos-Linux-s390x-gnu.tar.gz
-            skip_tests: true
-          - os_name: NetBSD-x86_64
-            os: ubuntu-20.04
-            target: x86_64-unknown-netbsd
-            bin: iced-todos
-            name: iced-todos-NetBSD-x86_64.tar.gz
             skip_tests: true
           - os_name: Windows-aarch64
             os: windows-latest
