@@ -62,6 +62,7 @@ fn setup_logging() -> anyhow::Result<()> {
     }
 }
 
+/// The entry point of the application.
 fn main() -> anyhow::Result<()> {
     setup_logging()?;
     iced::program(Todos::title, Todos::update, Todos::view)

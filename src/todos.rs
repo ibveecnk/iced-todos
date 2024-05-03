@@ -11,7 +11,7 @@ const DATA_PATH: &str = "./data.csv";
 pub struct Todos {
     /// List of todos in `String` format.
     data: Vec<String>,
-    /// The text input for new todos. Synced with the input field via `Message::TextInputChanged`.
+    /// The text input for new todos. Synced with the input field via [`TextInputChanged`](crate::todos::Message::TextInputChanged).
     text: String,
     /// Whether the todos have been modified since the last read/write operation.
     is_dirty: bool,
@@ -20,7 +20,7 @@ pub struct Todos {
 /// The messages that the application can send and receive.
 #[derive(Debug, Clone, Hash)]
 pub enum Message {
-    /// Submit a new todo. Triggers adding the current text input `self.text` to the list of todos.
+    /// Submit a new todo. Triggers adding the current text input [`text`](crate::todos::Todos) to the list of todos.
     SubmitTodo(),
     /// Remove a todo by its index in the list.
     RemoveTodo(usize),
@@ -39,7 +39,7 @@ fn write_to_csv(values: &[String]) -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Reads the values from the CSV file at `DATA_PATH`.
+/// Reads the values from the CSV file at [`DATA_PATH`].
 fn read_from_csv() -> anyhow::Result<Vec<String>> {
     let reader = csv::ReaderBuilder::new()
         .has_headers(false)
@@ -68,7 +68,7 @@ impl Default for Todos {
 }
 
 impl Todos {
-    /// Updates the state of the application based on the given `Message`.
+    /// Updates the state of the application based on the given [`Message`].
     pub(crate) fn update(&mut self, message: Message) {
         info!("Message: {:?}", message);
         match message {
