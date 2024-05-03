@@ -1,0 +1,29 @@
+[package]
+name = "gpui-test"
+version = "0.1.0"
+edition = "2021"
+
+[lints.rust]
+unsafe_code = "warn"
+dead_code = "warn"
+
+[lints.clippy]
+pedantic = "deny"
+correctness = "deny"
+suspicious = "warn"
+complexity = "warn"
+style = "warn"
+nursery = "deny"
+all = "warn"
+
+[dependencies]
+anyhow = "1.0.82"
+chrono = "0.4.38"
+csv = "1.3.0"
+log = "0.4.21"
+log4rs = "1.3.0"
+
+[dependencies.iced]
+git = "https://github.com/iced-rs/iced.git"
+rev = "cdb18e610a72b4a025d7e1890140393adee5b087"
+
