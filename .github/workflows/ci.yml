@@ -101,8 +101,6 @@ jobs:
             skip_tests: true
         toolchain:
           - stable
-          - beta
-          - nightly
     steps:
       - uses: actions/checkout@v4
       - name: Cache cargo & target directories
