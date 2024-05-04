@@ -2,11 +2,8 @@ name: Tests and release
 
 on:
   push:
-    branches:
-      - "**"
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+(-[0-9]+)?"
-  pull_request:
 
 env:
   CRATE_NAME: iced-todos
