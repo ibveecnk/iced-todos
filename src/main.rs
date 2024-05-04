@@ -17,6 +17,13 @@ fn setup_logging() -> anyhow::Result<()> {
     const LOG_FILE: &str = "todos.log";
 
     #[cfg(debug_assertions)]
+    /// The pattern to use when writing to console in `Debug` mode
+    const CONSOLE_PATTERN: &str = "{h({d(%Y-%m-%d %H:%M:%S)(utc)} - {l}: {f}:{L} {m}{n})}";
+    #[cfg(not(debug_assertions))]
+    /// The pattern to use when writing to console in `Release` mode
+    const CONSOLE_PATTERN: &str = "{h({d(%Y-%m-%d %H:%M:%S)(utc)} - {l}: {m}{n})}";
+
+    #[cfg(debug_assertions)]
     let console_level_filter = Box::new(ThresholdFilter::new(log::LevelFilter::Debug)); // Trace is too verbose for debug builds
     #[cfg(not(debug_assertions))]
     let console_level_filter = Box::new(ThresholdFilter::new(log::LevelFilter::Info));
@@ -26,7 +33,7 @@ fn setup_logging() -> anyhow::Result<()> {
         Box::new(
             log4rs::append::console::ConsoleAppender::builder()
                 .encoder(Box::new(log4rs::encode::pattern::PatternEncoder::new(
-                    "{h({d(%Y-%m-%d %H:%M:%S)(utc)} - {l}: {f}:{L} {m}{n})}",
+                    CONSOLE_PATTERN,
                 )))
                 .build(),
         ),

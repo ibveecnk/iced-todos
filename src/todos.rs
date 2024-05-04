@@ -84,6 +84,10 @@ impl Todos {
             }
             Message::RemoveTodo(i) => {
                 self.data.remove(i);
+                self.is_dirty = true;
+
+                let write_result = write_to_csv(&self.data);
+                self.is_dirty = write_result.is_err();
             }
             Message::TextInputChanged(text) => {
                 self.text = text;
