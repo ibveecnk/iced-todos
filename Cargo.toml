@@ -25,5 +25,5 @@ log4rs = "1.3.0"
 
 [dependencies.iced]
 git = "https://github.com/iced-rs/iced.git"
-rev = "cdb18e610a72b4a025d7e1890140393adee5b087"
+rev = "8bfd099c5929d927a3fdde666d4c645d0bd83cb7"
 
